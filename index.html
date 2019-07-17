@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML Fun!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+    <main>
+        <a id="mywebsite">www.alifallahi.ir</a>
+        <img src="img/tower_crane.png" alt="tower" id="crane">
+        <img src="img/hook.png" alt="hook" id="hook">
+        <div id="chain"></div>
+        <img src="img/boxes.png" alt="boxes" id="boxes">
+        <img src="img/box1.png" alt="box1" id="box1">
+    </main>
+
+    <footer>
+        <audio id="myAudio" src="sound/crane.mp3"></audio>
+        <img src="img/start_btn.png" onclick="engine_start()" class="btn">
+        &nbsp;
+        <img src="img/off_btn.png" onclick="engine_end()" class="btn">
+        &nbsp;
+        <img src="img/pickup_btn.png" onclick="pickup_position()" class="btn">
+        &nbsp;
+        <img src="img/drop_btn.png" onclick="drop_position()" class="btn">
+
+        <div class="slidecontainer">
+          <input type="range" min="150" max="400" value="50" class="slider" id="horizentalRange">
+          <a>x: <span id="horizental_move"></span></a>
+          <br>
+          <input type="range" min="100" max="280" value="50" class="slider" id="verticalRange">
+          <a>y: <span id="vertical_move"></span></a>
+        </div>
+
+        <p>
+            <b>Hint!</b>
+            <br>
+            To <b>pick up</b> the box, you should be in <b>x=335 and y=280</b>.
+            <br>
+            To <b>drop</b> the box, you should be in <b>x=220 and y=250</b>.
+        </p>
+
+    </footer>
+
+    <script>
+        document.getElementById("horizental_move").innerHTML = document.getElementById("horizentalRange").value;
+        document.getElementById("vertical_move").innerHTML = document.getElementById("verticalRange").value;
+        var fixed = " ";
+        var px_string = "px";
+
+        document.getElementById("horizentalRange").oninput = function() {
+            document.getElementById("horizental_move").innerHTML = this.value;
+            document.getElementById("hook").style.right = this.value + px_string;
+            var temp_value = parseInt(this.value) + 20;
+            document.getElementById("chain").style.right = temp_value + px_string;
+            if (fixed === "ok"){
+                var temp_value2 = parseInt(this.value)+10;
+                document.getElementById("box1").style.right = temp_value2 + px_string;
+            }
+        }
+
+        document.getElementById("verticalRange").oninput = function() {
+            document.getElementById("vertical_move").innerHTML = this.value;
+            var temp_value = parseInt(this.value) - 100;
+            document.getElementById("hook").style.top = this.value + px_string;
+            document.getElementById("chain").style.height = temp_value + px_string;
+            if (fixed === "ok"){
+                var temp_value2 = parseInt(this.value)+40;
+                document.getElementById("box1").style.top = temp_value2 + px_string;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
