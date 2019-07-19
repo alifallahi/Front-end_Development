@@ -1,0 +1,91 @@
+*{
+	box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  font-family: arial;
+  position: relative;
+}
+
+main{
+	width: 550px;
+	height: 350px;
+	border: 1px solid #808080;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 15px;
+	display: block;
+	background: #eeeeee;
+}
+
+footer{
+	border-radius: 10px;
+	width: 550px;
+	height: 220px;
+	border: 1px solid #808080;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 15px;
+	display: block;
+	background:#ffce12;
+	padding: 10px;
+}
+
+#crane{
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+}
+
+#hook{
+	position: absolute;
+	top:100px;
+	right: 150px;
+}
+
+#chain{
+	width: 2px;
+	height: 5px;
+	background: #808080;
+	position: absolute;
+	top:100px;
+	right: 170px;
+}
+
+#boxes{
+	position: absolute;
+	bottom: 10px;
+	right: 180px;
+}
+
+#box1{
+	position: absolute;
+	bottom: 10px;
+	right: 345px;
+}
+
+.btn{
+	width: 50px;
+	cursor: pointer;
+}
+
+.btn:hover{
+	border: 3px solid grey;
+	border-radius: 150px;
+}
+
+p{
+	border-radius: 10px;
+	background: white;
+	padding: 5px;
+}
+
+#mywebsite{
+	color:#808080;
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	font-size: 18px;
+}
